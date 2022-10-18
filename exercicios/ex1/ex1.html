@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercicio 1</title>
+    <link
+            rel="stylesheet"
+            href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
+    />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="ex1.js"></script>
+</head>
+<body>
+<div class="col-sm-6 col-sm-offset-3">
+
+    <h1>Informe dois números</h1>
+
+    <form method="POST" id=form action="/exercicios/ex1/ex1.php">
+        <div id="number1" class="form-group">
+            <label for="num1">Numero 1</label>
+            <input
+                    type="number"
+                    class="form-control"
+                    id="num1"
+                    name="num1"
+                    placeholder="Primeiro número"
+            />
+        </div>
+
+        <div id="number2" class="form-group">
+            <label for="num2">Numero 2</label>
+            <input
+                    type="number"
+                    class="form-control"
+                    id="num2"
+                    name="num2"
+                    placeholder="Segundo número"
+            />
+        </div>
+
+        <button type="submit" class="btn btn-success">
+            Submit
+        </button>
+    </form>
+    <br>
+</div>
+</body>
+</html>
