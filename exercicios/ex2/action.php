@@ -1,14 +1,3 @@
-<html>
-<head>
-    <title>Exercicio 2</title>
-</head>
-<body>
-<form method="post" action="ex2.php">
-    <h1>Digite um número</h1>
-    <label for="num">Digite o número: </label>
-    <input type="number" id="num" name="num">
-    <input type="submit" value="submit">
-</form>
 <?php
 $num = $_POST['num'];
 
