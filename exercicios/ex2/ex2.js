@@ -16,10 +16,10 @@ $(document).ready(function () {
             console.log(data);
 
             if (!data.success) {
-                if (data.errors.num1) {
+                if (data.errors.num) {
                     $("#number").addClass("has-error");
                     $("#number").append(
-                        '<div class="help-block">' + data.errors.num1 + "</div>"
+                        '<div class="help-block">' + data.errors.num + "</div>"
                     );
                 }
 
