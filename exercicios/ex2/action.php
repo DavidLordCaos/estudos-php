@@ -2,21 +2,22 @@
 
 function calculo($num)
 {
-    $num = $_POST['num'];
+    $div = ['2', '5', '10'];
 
     if ($num % 2 == 0 && $num % 5 == 0 && $num % 10 == 0) {
-        return "O número $num é divisivel por 10, 5 e 2";
+        $result = ["$div[0], $div[1], $div[2]"];
     } else if ($num % 5 == 0 && $num % 10 == 0) {
-        return "O número $num é divisivel por 10 e 5";
+        $result = ["$div[1], $div[2]"];
     } else if ($num % 2 == 0 && $num % 10 == 0) {
-        return "O número $num é divisivel por 10 e 2";
+        $result = ["$div[0],$div[2]"];
     } else if ($num % 2 == 0 && $num % 5 == 0) {
-        return "O número $num é divisivel por 5 e 2";
+        $result = ["$div[0],$div[1]"];
     } else if ($num % 2 == 0) {
-        return "O número $num é divisivel por 2";
+        $result = [$div[0]];
     } else if ($num % 5 == 0) {
-        return "O número $num é divisivel por 5";
+        $result = [$div[1]];
     } else {
-        return "O número $num não é divisivel por 2, 5 e 10";
+        $result = 'Não é divisivel por 2, 5 e 10';
     }
+    return $result;
 }

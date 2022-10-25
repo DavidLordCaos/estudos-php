@@ -1,36 +1,39 @@
 $(document).ready(function () {
+    var showMessage = $('#showMessage');
+    var helpBlock = $('.help-block');
+    var formGroup = $('.form-group');
+
+    showMessage.hide();
+    helpBlock.hide();
+    formGroup.removeClass("has-error");
+
     $("form").submit(function (event) {
-        $(".form-group").removeClass("has-error");
-        $(".help-block").remove();
-        var formData = {
-            num: $("#num").val(),
-        };
+        event.preventDefault();
+
+        helpBlock.removeClass("has-error");
+        showMessage.hide();
+        helpBlock.hide();
 
         $.ajax({
             type: "POST",
             url: "message.php",
             data: $('form').serialize(),
-            dataType: "json",
-            encode: true,
-        }).done(function (data) {
-            console.log(data);
+            dataType: "JSON",
+            success: function (data) {
 
-            if (!data.success) {
-                if (data.errors.num) {
-                    $("#number").addClass("has-error");
-                    $("#number").append(
-                        '<div class="help-block">' + data.errors.num + "</div>"
-                    );
+                if (data.success) {
+                    showMessage.show();
+
+                    if(Array.isArray(data.result))
+                        showMessage.find('#result').html(data.result.join(','));
+                    else
+                        showMessage.find('#result').html(data.result);
+                } else {
+                    formGroup.addClass('has-error');
+                    helpBlock.show();
+                    helpBlock.html(data.errors.num)
                 }
-
-            } else {
-                $("#form").append(
-                    '<div class="alert alert-success">' + data.message + "</div>",
-                    '<div class="alert alert-success">' + data.result + "</div>",
-                );
             }
         });
-
-        event.preventDefault();
     });
 });
