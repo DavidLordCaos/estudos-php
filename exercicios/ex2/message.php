@@ -14,7 +14,6 @@ if (!empty($errors)) {
     $data['errors'] = $errors;
 } else {
     $data['success'] = true;
-    $data['message'] = 'Concluido!';
     $data['result'] = calculo($_POST['num']);
 }
 

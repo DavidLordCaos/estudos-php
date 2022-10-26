@@ -20,6 +20,7 @@ $(document).ready(function () {
             data: $('form').serialize(),
             dataType: "JSON",
             success: function (data) {
+                console.log(data);
 
                 if (data.success) {
                     showMessage.show();
