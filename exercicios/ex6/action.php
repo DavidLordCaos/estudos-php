@@ -1,11 +1,3 @@
-<html>
-<body>
-<form method="post" action="ex6.php">
-    <label for="mes">Digite um número entre 1 e 12: </label>
-    <input type="number" id="mes" name="mes">
-    <input type="submit" value="Submit">
-</form>
-
 <?php
 $mes = $_POST['mes'];
 
@@ -36,7 +28,3 @@ if ($mes == 1) {
 } else {
     echo "Digite um número válido";
 }
-?>
-
-</body>
-</html>
