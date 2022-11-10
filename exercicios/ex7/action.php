@@ -1,13 +1,14 @@
 <?php
 
 function returnBook($book, $choose) {
-    $book = $_POST['book'];
-    $choose = $_POST['choose'];
+    $today = date("d");
 
-    if ($choose == 'prof') {
-        $result = "Você tem 10 dias pra devolver o livro $book";
+    if ($_POST['choose'] == 'prof') {
+        $today = $today + 10;
+        $result = "O livro $book deverá ser devolvido no dia $today";
     } else {
-        $result = "Você tem 3 dias pra devolver o livro $book";
+        $today = $today + 3;
+        $result = "O livro $book deverá ser devolvido no dia $today";
     }
     return $result;
 }
