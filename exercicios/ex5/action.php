@@ -1,15 +1,18 @@
 <?php
 
 function triangleType($ab, $bc, $ca) {
-    $ab = $_POST['ab'];
-    $bc = $_POST['bc'];
-    $ca = $_POST['ca'];
 
-    if ($ab == $bc && $bc == $ca) {
+    if ($_POST['ab'] == $_POST['bc'] && $_POST['bc'] == $_POST['ca']) {
         $result = "equilátero";
-    } else if ($ab != $bc && $ab == $ca) {
+    } else if ($_POST['ab'] != $_POST['bc'] && $_POST['ab'] == $_POST['ca']) {
         $result = "isósceles";
-    } else if ($ab != $bc && $bc != $ca) {
+    } else if ($_POST['ab'] == $_POST['bc'] && $_POST['bc'] != $_POST['ca']) {
+        $result = "isósceles";
+    } else if ($_POST['ab'] != $_POST['bc'] && $_POST['bc'] == $_POST['ca']) {
+        $result = "isósceles";
+    } else if ($_POST['ab'] == $_POST['ca'] && $_POST['ab'] != $_POST['bc']) {
+        $result = "isósceles";
+    } else if ($_POST['ab'] != $_POST['bc'] && $_POST['bc'] != $_POST['ca']) {
         $result = "escaleno";
     }
     return $result;
