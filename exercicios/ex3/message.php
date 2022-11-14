@@ -25,6 +25,7 @@ if (!empty($errors)) {
     $data['success'] = false;
     $data['status'] = "Rejeitado";
     $data['errors'] = $errors;
+    $data['username'] = checkinResult($_POST['name']);
 } else {
     $data['success'] = true;
     $data['status'] = "Aprovado!";
