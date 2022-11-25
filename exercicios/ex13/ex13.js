@@ -27,7 +27,7 @@ $(document).ready(function(){
                   showMessage.find('#quantity').html(data.numbers);
               } else {
                   helpBlock.show();
-                  $('errnum').html(data.errors.num);
+                  $('#errnum').html(data.errors.num);
                   formGroup.addClass('has-error');
               }
           }
